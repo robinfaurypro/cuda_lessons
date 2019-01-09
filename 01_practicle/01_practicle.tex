@@ -124,7 +124,7 @@ In the same way we can increase the number of blocks per grid to dispatch the co
 	int blockPerGrid = (N + 256 - 1) / blockSize;
 	caesarEncode<<<blockPerGrid, 256>>>(bufferSize, buffer, outBuffer, 10);
 \end{lstlisting}
-We can notice in this case that we run N threads so we can remove the for loop.
+We can notice in this case that we run N threads so we can remove the for loop. Before reading the output buffer you have to wait the kernel execution. For that you can use the cudaDeviceSyncronize function.
 
 \section{result}
 If everything is going well "HELLO WORLD" should become "KHOOR ZRUOG" for a shift value of 3.

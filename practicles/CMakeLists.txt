@@ -3,3 +3,4 @@ project(cuda_lessons LANGUAGES CXX CUDA)
 
 add_subdirectory(src/helloworld)
 add_subdirectory(src/tp01)
+add_subdirectory(src/raytracer)
