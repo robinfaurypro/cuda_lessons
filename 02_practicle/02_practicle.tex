@@ -2,7 +2,7 @@
 \usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[top = 1cm, bottom = 2cm, right = 2cm, left = 2cm]{geometry}
+\usepackage[top = 2cm, bottom = 2cm, right = 2cm, left = 2cm]{geometry}
 \usepackage{cite}
 \usepackage[final]{hyperref}
 \usepackage{listings}
@@ -95,6 +95,11 @@ Finally, get and print the value of the elapsed time gave by this CUDA function:
 \end{lstlisting}
 
 \section{Send rays}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{figure/sendray.png}
+	\caption{Send Ray}
+\end{figure}
 As expected, rays are the most important part of a raytracer. It's just an origin point and a direction. Create a class for instantiate a ray in a kernel and provide a function to compute a point on the ray ($P = Origin + Direction*t$).\\
 Now we need a camera at the origin $(0, 0, 0)$ and a screen in front of the camera $(0, 0, -1)$. We have to choose a vertical and horizontal size of our screen in the 3D world. To avoid distortion it's a good practice to keep the same aspect ratio between your image resolution and your screen ($horizontal/vertical = width/height$). If you choose $horizontal = (2, 0, 0)$ and $vertical = (0, 2, 0)$, your lower left corner position is $(-1, -1, -1)$. With this values we can send one ray per pixel from the camera. The ray direction can be compute using this formula: $rayDir = lowerLeftCorner + (x/width)*horizontal + (y/height)*vertical$\\
 For testing our program we can add an implicit surface sphere. There are a lot of algorithms to compute intersections between ray and sphere. A good C++ implementation can be found here (https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection).
