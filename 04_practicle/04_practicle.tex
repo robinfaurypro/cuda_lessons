@@ -96,7 +96,14 @@ cudaMemcpy(spheresGPU, &spheres[0], sizeof(Sphere)*spheres.size(), cudaMemcpyHos
 Most of the time, when we compute heavy algorithm we get some error about kernel configuration. The commun error are:
 \begin{itemize}
 	\item Too Many Resources Requested for Launch (That mean each thread need more registe that the SM can provide. Reducing the number of thread per block solve this error)
-	\item an illegal memory access was encountered (GPU threads are designed to be short process. If you use recursive function you may saturate one of your callstack and get this error. If you really need to call a lot of function, you can increase the size of your callstack using cudaDeviceSetLimit)
+	\item an illegal memory access was encountered. You may read values outside your buffers or you stack pointer (GPU threads are designed to be short process. If you use recursive function you may saturate one of your callstack and get this error. If you really need to call a lot of function, you can increase the size of your callstack using cudaDeviceSetLimit)
 \end{itemize}
+To grab an error after a kernel you need to synchronize the device and the host.
+\begin{lstlisting}
+	cudaError_t err = cudaGetLastError();
+	if (err != cudaSuccess) {
+		printf("%s\n", cudaGetErrorString(err));
+	}
+\end{lstlisting}
 
 \end{document}
