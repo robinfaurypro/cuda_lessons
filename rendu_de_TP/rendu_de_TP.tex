@@ -1,0 +1,103 @@
+\documentclass[french,12pt]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{lmodern}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[top = 2cm, bottom = 2cm, right = 2cm, left = 2cm]{geometry}
+\usepackage{cite}
+\usepackage[final]{hyperref}
+\usepackage{listings}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	filecolor=magenta,
+	urlcolor=blue         
+}
+
+\begin{document}
+
+\title{Critère d'évaluation\\Rendu de TP\\Examen}
+\date{20/02/2019}
+\maketitle
+
+\section{Evaluation}
+L'évaluation des étudiants sera effectué suivant trois critères pondérés de la manière suivante :
+
+\begin{itemize}
+	\item Un contrôle continu (coefficient 2)
+	\item Un travail collaboratif (coefficient1)
+	\item Une évaluation des connaissances (coefficient1)
+\end{itemize}
+
+Le contrôle continu prendra la forme d'un rendu de travaux pratiques.\\
+L'examen final sera divisé en deux parties. Les trente premières minutes seront dédiées à l'étude d'une problématique issue d'un cas réel en groupe de deux à cinq personnes. La fin de l'examen évaluera les questions de cours.
+
+\section{Rendu de TP}
+Le compte rendu du TP sur le raytracer ainsi que son code source devra être rendu avant le 18/03/2019 à 10h en français ou en anglais. Etant donné que dans les années futures vous allez surement être amené à rédiger des documents de synthèse, je vous invite à suivre ce plan.
+
+\begin{itemize}
+	\item Introduction (Présentation du contexte)
+	\item Table des symboles (Index des symboles utilisées)
+	\item Table des équations (Index des équations)
+	\item Table des figures (Index des images)
+	\item Etat de l'art (Recherche de l'existant dans la littérature)
+	\item Résulats (Donnée brute obtenue)
+	\item Observation des résultats (Critique des résultats. Par exemple : On s'attendait a tel résultat et on a obtenu ceci)
+	\item Conclusions (Rédaction du bilan, des pistes d'amélioration/optimisation, ouverture sur d'autre sujet, ...)
+\end{itemize}
+
+\subsection{Table des symboles}
+Il est important dans un rapport de conserver une cohérence entre les symboles que vous utilisez. Il ne faut pas que vous choisissiez $i$ pour désigner un indice, puis que vous utilisiez $i$ dans une formule utilisant des nombres complexe. Pour éviter ceci on utilisera la table des symboles qui regroupera toutes les notations que vous utiliserez avec leurs définitions. Par exemple :
+
+\begin{itemize}
+	\item $t$ : Paramétrisation global d'une droite.
+	\item $\mathbf{C}$ : Une couleur.
+	\item $S$ : Une sphère.
+\end{itemize}
+
+On notera que les scalaires sont en minuscule, les vecteurs en majuscule et en gras.
+
+\subsection{Table des équations}
+A l'instar de la table des symboles, il est important de définir les formules utilisées.
+
+\begin{itemize}
+	\item (1) : Représentation d'une sphère.
+\end{itemize}
+
+\subsection{Rédaction d'une équation}
+On rédigera une équation de la manière suivante : 
+
+\begin{equation} \label{eq1}
+\begin{split}
+S & = (x-x_0)^2+(y-y_0)^2+(z-z_0)^2 = r^2, \\
+ & = (x-x_0)^2+(y-y_0)^2+(z-z_0)^2 -r^2 = 0;
+\end{split}
+\end{equation}
+
+On notera que l'équation est indexée. On mettra des virgules pour chaque ligne de la démonstration et un point virgule pour la fin d'une démonstration.
+
+\section{Table des Figures}
+Encore une fois on listera les images avec leurs descriptions. On utilisera la même description pour commenter l'image.
+\begin{itemize}
+	\item Figure 1 : Schéma de la réflexion d'un rayon sur un matériau diffus.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{figures/diffuse.png}
+	\caption{Schéma de la réflexion d'un rayon sur un matériau diffus.}
+\end{figure}
+
+\section{Examen}
+\subsection{Travail en groupe}
+Pour la première partie de l'examen vous travaillerez en groupe sur un sujet comme par exemple comment gérer des clients sur un serveur en parallèle.
+\subsection{Evaluation des connaissances}
+Cette deuxième partie sera constituée simplement de question de cours vu durant le premier cours et durant les TP.
+
+
+\end{document}
