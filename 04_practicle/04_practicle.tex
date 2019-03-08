@@ -43,7 +43,7 @@ Create a Sphere class into the device side for storing the center and the radius
 	__device__ bool Sphere::intersect(const Ray& ray, float& t) {
 		float t0, t1;
 		Vector3GPU OC = ray.getOrigin() - center_;
-		float b = dot(oc, ray.getDirection());
+		float b = 2.f*dot(oc, ray.getDirection());
 		float c = dot(oc, oc) - radius_*radius_;
 		// ...
 	}

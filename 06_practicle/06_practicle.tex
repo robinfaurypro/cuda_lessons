@@ -173,6 +173,11 @@ If the ray send hit a sphere, you can compute recursively the scattered ray and 
 	}
 \end{lstlisting}
 For a diffuse material, we use a simplify model of the Lambertian reflectance. Each rays will be reflected randomly while they hit a sphere.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.47]{figures/diffuse.png}
+	\caption{Lambertian}
+\end{figure}
 
 \begin{lstlisting}
 	Vector3 target = hit.intersection_ + hit.normal_ + randomSphereUnitVector(states);
@@ -193,7 +198,7 @@ At this point you can run your recursive function 10 times but, not 50 time beca
 			Vector3 attenuation;
 			Vector3 target = hit.intersection_ + hit.normal_ + randomSphereUnitVector(states);
 			rayScattered = Ray(hit.intersection_, (target-hit.intersection_));
-			attenuation = SphereColor_;
+			cur_attenuation *= SphereColor_;
 		} else {
 			return cur_attenuation*backgroundColor;
 		}
